@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Webbshop</title>
+    <link rel="stylesheet" href="./styles.css" />
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <h1>Min Webbshop</h1>
+            <nav>
+                <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+                <ul id="nav-menu">
+                    <li><a href="./index.html">Hem</a></li>
+                    <li><a href="./about.html">Om oss</a></li>
+                    <li><a href="./contact.html">Kontakt</a></li>
+                    <li class="cart">
+                        <a href="#" id="toggle-cart">Kundvagn <span id="cart-count">0</span></a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <aside class="filter">
+        <h2>Filtrera produkter</h2>
+    </aside>
+
+    <main class="product-grid" id="product-grid"></main>
+
+    <div class="cart-panel" id="cart-panel">
+        <h2>Din Kundvagn</h2>
+        <div id="cart-items"></div>
+        <div class="empty-msg" id="empty-msg">Din varukorg är tom.</div>
+        <div class="total" id="cart-total">Totalt: 0 kr</div>
+        <div class="cart-actions">
+            <span id="closeBtn">&times;</span>
+            <button onclick="clearCart()">Töm kundvagn</button>
+            <button onclick="checkout()">Bekräfta köp</button>
+        </div>
+
+        <div id="checkout-form" style="display:none; margin-top: 20px;">
+            <h3>Slutför beställning</h3>
+            <div id="order-summary" class="order-summary"></div>
+            <label>Fullständigt namn:<br><input type="text" id="checkout-name" required></label><br><br>
+            <label>E-post:<br><input type="email" id="checkout-email" required></label><br><br>
+            <label>Telefonnummer:<br><input type="tel" id="checkout-phone" required></label><br><br>
+            <label>Gatuadress:<br><input type="text" id="checkout-street" required></label><br><br>
+            <label>Postnummer:<br><input type="text" id="checkout-zipcode" required></label><br><br>
+            <label>Ort:<br><input type="text" id="checkout-city" required></label><br><br>
+            <div id="form-errors" style="color: red; margin-bottom: 1rem;"></div>
+            <button onclick="submitOrder()">Skicka beställning</button>
+        </div>
+
+        <div class="thank-you" id="thank-you-msg" style="display: none;">Tack för ditt köp!</div>
+    </div>
+
+    <script src="./script.js"></script>
+
+</body>
+
+</html>

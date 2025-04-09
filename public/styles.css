@@ -1,0 +1,377 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background: #1a1a1a;
+    color: white;
+    padding: 20px 10%;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.cart span {
+    background: red;
+    color: white;
+    border-radius: 50%;
+    padding: 2px 8px;
+    font-size: 0.8em;
+    margin-left: 5px;
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+
+
+.filter {
+    padding: 20px 10%;
+    background: white;
+    border-bottom: 1px solid #ccc;
+}
+
+.filter label {
+    display: block;
+    margin: 5px 0;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.product-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    padding: 16px;
+    transition: transform 0.2s ease;
+    height: 100%;
+}
+
+.product-card:hover {
+    transform: translateY(-4px);
+}
+
+.product-card img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.product-card h2 {
+    font-size: 1rem;
+    margin: 10px 0 5px;
+}
+
+.product-card p {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: auto;
+}
+
+.product-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 12px;
+}
+
+.product-bottom .price {
+    font-weight: bold;
+    color: #333;
+}
+
+.product-bottom button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.product-bottom button:hover {
+    background-color: #0056b3;
+}
+
+
+.price {
+    color: #27ae60;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+button {
+    padding: 10px 20px;
+    background: #27ae60;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #219150;
+}
+
+.cart-panel {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 300px;
+    height: 100vh;
+    background: white;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
+    transition: right 0.3s ease;
+    padding: 20px;
+    overflow-y: auto;
+    z-index: 1000;
+}
+
+.cart-panel.active {
+    right: 0;
+    width: 600px;
+}
+
+.cart-item {
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+}
+
+.cart-item p {
+    margin: 5px 0;
+}
+
+.cart-item button {
+    background: #c0392b;
+    margin-top: 5px;
+}
+
+.total {
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+.cart-actions {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.cart-actions button:last-child {
+    background: #2980b9;
+}
+
+.empty-msg {
+    color: #999;
+    font-style: italic;
+    margin-top: 10px;
+}
+
+.thank-you {
+    color: green;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+#checkout-form input {
+    width: 100%;
+    padding: 5px;
+}
+
+.order-summary {
+    background: #f9f9f9;
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin-bottom: 15px;
+}
+
+#closeBtn {
+    cursor: pointer;
+    font-size: 24px;
+    float: right;
+    margin-right: -10px;
+    color: #444;
+    transition: color 0.2s ease;
+}
+
+#closeBtn:hover {
+    color: #e00;
+}
+
+.quantity-controls {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    margin-left: 10px;
+}
+
+.qty-btn {
+    background-color: #eee;
+    border: 1px solid #ccc;
+    padding: 2px 6px;
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 3px;
+}
+
+.qty-btn:hover {
+    background-color: #ddd;
+}
+
+div#cart-items {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.contact-container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 2rem;
+    background-color: #f9f9f9;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.contact-container h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #333;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form label {
+    margin-bottom: 0.3rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.contact-form input,
+.contact-form textarea {
+    margin-bottom: 1.2rem;
+    padding: 0.8rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    transition: border 0.2s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+.contact-form button {
+    padding: 0.9rem;
+    font-size: 1rem;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.contact-form button:hover {
+    background-color: #0056b3;
+}
+
+.form-message {
+    margin-top: 1rem;
+    font-weight: 500;
+    color: green;
+}
+
+.cart-buttons {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.cart-buttons button {
+    padding: 0.4rem 0.6rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.cart-buttons button:hover {
+    opacity: 0.9;
+}
+
+.remove-btn {
+    background-color: #dc3545;
+    color: #fff;
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        display: none;
+        flex-direction: column;
+        background: #1a1a1a;
+        position: absolute;
+        top: 60px;
+        right: 10px;
+        width: 200px;
+        padding: 10px;
+    }
+
+    nav ul.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+}
+
+@media (max-width: 500px) {
+    .cart-panel.active {
+        width: 100%;
+    }
+}
