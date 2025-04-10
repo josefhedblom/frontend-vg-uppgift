@@ -125,12 +125,16 @@ function updateCart() {
     const div = document.createElement("div");
     div.className = "cart-item";
     div.innerHTML = `
-      <p>${item.product.title} - ${item.product.price} kr - ${item.quantity}st</p>
-      <div class="cart-buttons">
-        <button onclick="decreaseQuantity(${index})">-</button>
-        <button onclick="increaseQuantity(${index})">+</button>
-        <button onclick="removeProductCompletely(${index})" class="remove-btn">Ta bort helt</button>
-      </div>
+    <div class="item-info">
+      <span class="item-name">${item.product.title}</span>
+      <span class="item-price">${item.product.price}kr</span>
+      <span class="item-qty"> ${item.quantity} st</span>
+    </div>
+    <div class="cart-buttons">
+      <button onclick="decreaseQuantity(${index})">-</button>
+      <button onclick="increaseQuantity(${index})">+</button>
+      <button onclick="removeProductCompletely(${index})" class="remove-btn">Ta bort helt</button>
+    </div>
     `;
     cartItemsEl.appendChild(div);
   });

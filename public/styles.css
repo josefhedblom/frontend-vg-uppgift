@@ -170,19 +170,41 @@ button:hover {
 }
 
 .cart-item {
-    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     border-bottom: 1px solid #ddd;
-    padding-bottom: 10px;
+    padding: 10px 0;
+    gap: 1rem;
 }
 
-.cart-item p {
-    margin: 5px 0;
+/* .item-info {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+} */
+
+.item-name {
+    font-weight: bold;
+    font-size: 1rem;
 }
 
-.cart-item button {
-    background: #c0392b;
-    margin-top: 5px;
+.item-price,
+.item-qty {
+    font-size: 0.9rem;
+    color: #555;
 }
+
+.cart-buttons {
+    display: flex;
+    gap: 6px;
+}
+
+.cart-buttons button {
+    padding: 4px 8px;
+    font-size: 0.9rem;
+}
+
 
 .total {
     margin-top: 20px;
